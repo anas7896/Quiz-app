@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+</head>
+<body onload="nextQuestion()">
+    <div class="header-container">
+        <h1>Quiz App</h1>
+    </div>
+    <div class="container">
+        <div class="timer-container">
+            <p id="timer"><span>1:30</span></p>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-value"></div>
+            </div>
+        </div>
+        <div class="quiz-content">
+            <p id="ques">Q:</p>
+            <div class="option-container">
+                <input name="option" value="1" onclick="enableButton()" type="radio" id="opt1_radio">
+                <label for="opt1_radio" id="opt1"></label>
+            </div>
+            <div class="option-container">
+                <input name="option" value="2" onclick="enableButton()" type="radio" id="opt2_radio">
+                <label for="opt2_radio" id="opt2"></label>
+            </div>
+            <div class="option-container">
+                <input name="option" value="3" onclick="enableButton()" type="radio" id="opt3_radio">
+                <label for="opt3_radio" id="opt3"></label>
+            </div>
+            <button disabled id="btn" onclick="nextQuestion()">Next</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
